@@ -1,18 +1,10 @@
-using UnityEngine;
-
 namespace WaveMovement
 {
-    public class WaveMovementSettings : MonoBehaviour
+    [System.Serializable]
+    public struct WaveMovementSettings
     {
-        public static WaveMovementSettings Instance { get; private set; }
-    
-        [field:SerializeField] public bool UseJobs { get; private set; }
-    
-        private void Awake() {
-            if(Instance != null)
-                throw new System.NotSupportedException();
-    
-            Instance = this;
-        }
+        public bool UseJobs;
+
+        public float Speed;
     }
 }
